@@ -1,0 +1,102 @@
+/* style.scss */
+@import 'partials/reset';
+@import 'partials/colors';
+@import 'partials/fonts';
+@import 'partials/spacings';
+@import 'partials/buttons';
+@import 'partials/mixins';
+@import 'partials/animations';
+
+/* Navbar */
+.navbar {
+  @include flex-center;
+  justify-content: space-between;
+  background-color: $white;
+  padding: $spacing-medium 0;
+  
+  .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+
+  .nav-links {
+    list-style: none;
+    display: flex;
+
+    li {
+      margin: 0 $spacing-small;
+
+      a {
+        text-decoration: none;
+        color: $primary-color;
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+/* Hero Section */
+.hero {
+  background-color: $hero-background;
+  color: $white;
+  padding: $spacing-xlarge 0;
+  @include flex-center;
+  flex-direction: column;
+
+  .hero-content {
+    text-align: center;
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: $spacing-medium;
+    }
+
+    p {
+      font-size: 1.25rem;
+      margin-bottom: $spacing-large;
+    }
+
+    .buttons {
+      display: flex;
+      gap: $spacing-small;
+
+      .button {
+        &.primary {
+          @extend .button.primary;
+        }
+        &.secondary {
+          @extend .button.secondary;
+        }
+        &.tertiary {
+          @extend .button.tertiary;
+        }
+      }
+    }
+  }
+
+  .hero-image {
+    margin-top: $spacing-xlarge;
+  }
+}
+
+/* Grid */
+.grid {
+  @include container;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: $spacing-medium;
+  background-color: $white;
+  padding: $spacing-large 0;
+
+  .grid-item {
+    background-color: $background-color;
+    padding: $spacing-medium;
+    text-align: center;
+    border-radius: 4px;
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+  }
+}
